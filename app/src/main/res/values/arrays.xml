@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note">
+        <item>Погода</item>
+        <item>Новости</item>
+        <item>Гороскоп</item>
+        <item>Стижка</item>
+    </string-array>
+    <string-array name="noteContent">
+        <item>Ясно</item><!-- герб Москвы -->
+        <item>Кризис</item><!-- герб Санкт-Петербурга -->
+        <item>Овен</item><!-- герб Екатеринбурга -->
+        <item>наголо</item><!-- герб Новосибирска -->
+
+    </string-array>
+
+
+
+</resources>
