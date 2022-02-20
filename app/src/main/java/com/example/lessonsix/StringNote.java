@@ -4,7 +4,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class StringNote implements Parcelable {
-    private String NoteIndex;
+    private static String NoteIndex;
+
+    public String getNoteNote() {
+        return NoteNote;
+    }
+
+    public static Creator<StringNote> getCREATOR() {
+        return CREATOR;
+    }
+
+    public void setNoteNote(String noteNote) {
+        NoteNote = noteNote;
+    }
+
+    private String NoteNote;
 
     protected StringNote(Parcel in) {
         NoteIndex = in.readString();
@@ -22,6 +36,12 @@ public class StringNote implements Parcelable {
         }
     };
 
+    public StringNote(String погода, String ясно) {
+        this.NoteIndex = "ясно";
+        this.NoteNote = "погода";
+
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -31,7 +51,7 @@ public class StringNote implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(NoteIndex);
     }
-    public String getNoteIndex() {
+    public static String getNoteIndex() {
         return NoteIndex;
     }
 

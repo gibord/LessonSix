@@ -42,10 +42,9 @@ private StringNote stringNote;
         super.onViewCreated(view, savedInstanceState);
         stringNote = getArguments().getParcelable(ARG_NOTE);
         TextView textView = view.findViewById(R.id.TView);
-        textView.setText(valueOf.getResourceId(stringNote.getNoteIndex(),R.array.noteContent));
-
-        TypedArray images = getResources().obtainTypedArray(R.array.coat_of_arms_imgs);
-        tView.setStringResource(images.getResourceId(stringNote.getIndex(),R.drawable.msc));
+        //TypedArray String = getResources().obtainTypedArray(R.array.noteContent);
+        //textView.setText(String.getResourceId(Integer.parseInt(stringNote.getNoteIndex()),R.array.noteContent));
+        textView.setText(StringNote.getNoteIndex());
 
     }
 }

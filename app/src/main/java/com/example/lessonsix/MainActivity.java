@@ -23,17 +23,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState == null) {
-            note NoteFragment = note.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.note, NoteFragment).commit();
-         /*   if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            note Note = note.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.note, Note).commit();
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
                 ;
-            {
-                noteContent NoteContent = noteContent.newInstance();
+            {   StringNote defaultNote = new StringNote("Погода", "Ясно");
+                noteContent NoteContent = noteContent.newInstance(defaultNote);
                 getSupportFragmentManager().beginTransaction().replace(R.id.noteContent, NoteContent).commit();
 
 
-            }*/
+            }
 
         }
 
