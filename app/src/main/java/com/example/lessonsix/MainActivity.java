@@ -1,21 +1,9 @@
 package com.example.lessonsix;
 
+import android.content.res.Configuration;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.note, Note).commit();
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
                 ;
-            {   StringNote defaultNote = new StringNote("Погода", "Ясно");
-                noteContent NoteContent = noteContent.newInstance(defaultNote);
+            {   StringNote defaultStringNote = new StringNote(StringNote.getNoteIndex());
+                noteContent NoteContent = noteContent.newInstance(defaultStringNote);
                 getSupportFragmentManager().beginTransaction().replace(R.id.noteContent, NoteContent).commit();
 
 

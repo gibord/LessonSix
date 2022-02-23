@@ -2,7 +2,6 @@ package com.example.lessonsix;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +31,34 @@ public class note extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        String[] note = getResources().getStringArray(R.array.note);
+
+        for (int i=0; i< note.length; i++){
+
+            String StringNoteName = note[i];
+            TextView textView = new TextView(getContext());
+            textView.setTextSize(30f);
+            textView.setText(StringNoteName);
+            ((LinearLayout) view).addView(textView);
+            final int finalI = i;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    StringNote StringNote = new StringNote(finalI);
+                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                        noteContent NoteContent = noteContent.newInstance(StringNote);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.noteContent, NoteContent).commit();
+                    }else{
+                       // noteContent NoteContent = noteContent.newInstance(StringNote);
+                      //  getActivity().getSupportFragmentManager().beginTransaction();
+                    }
+
+                    }
+
+            });
+
+        }
 
     }
 

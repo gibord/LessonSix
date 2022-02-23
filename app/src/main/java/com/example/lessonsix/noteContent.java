@@ -1,15 +1,10 @@
 package com.example.lessonsix;
 
-import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,9 +37,9 @@ private StringNote stringNote;
         super.onViewCreated(view, savedInstanceState);
         stringNote = getArguments().getParcelable(ARG_NOTE);
         TextView textView = view.findViewById(R.id.TView);
-        //TypedArray String = getResources().obtainTypedArray(R.array.noteContent);
-        //textView.setText(String.getResourceId(Integer.parseInt(stringNote.getNoteIndex()),R.array.noteContent));
-        textView.setText(StringNote.getNoteIndex());
+        TypedArray String = getResources().obtainTypedArray(R.array.noteContent);
+        textView.setText(String.getResourceId(Integer.parseInt(StringNote.getNoteName()), 0));
+        //textView.setText(StringNote.getNoteIndex());
 
     }
 }
